@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+/* CONFIG */
+
+*
+{
+    padding: 0;
+    margin: 0;
+
+}
+
+html
+{
+    --bg: #b8e2eb;
+    --line:#009fbe;
+    --linehover:#86e0f1;
+    --icon:#dd4822;
+
+}
+
+/* GERAL */
+
+body
+{
+    background-color: var(--bg);
+    padding: 0 30px;
+}
+
+.grid
+{
+    display: grid;
+    grid-template-columns: 1fr 15px 1fr 15px 1fr;
+    grid-template-rows: 1fr 15px 1fr 15px 1fr;
+    max-width: 500px;
+    margin: 10px auto 30px;
+}
+
+/* INICIADOR */
+
+.init 
+{
+    margin: 30px auto 5px auto;
+}
+
+.init > div:nth-child(2)
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.text
+{
+    display: block;
+    font-family: "Roboto";
+    font-weight: bold;
+    font-size: 16px;
+    color: rgb(68, 67, 67);
+    letter-spacing: .6px;
+    cursor: default;
+}
+
+.init-btn
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.init-btn > span
+{
+    background-color: var(--line);
+    width: 8px;
+    height: 8px;
+    border-radius: 45%;
+}
+
+.init-btn button
+{
+    display: block;
+    padding: 2px 4px;
+    background-color: transparent;
+    border: 4px solid var(--line);
+    border-radius: 2px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.26);
+    cursor: pointer;
+}
+
+.init-btn button:hover
+{
+    border: 4px solid var(--icon);
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.575);
+}
+
+.boli-live
+{
+    display: block;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    margin: 10px 0;
+    border: 4px solid rgb(156, 151, 151);
+}
+
+.xis-live
+{
+    background-color: rgb(156, 151, 151);
+    border-radius: 2px;
+    display: block;
+    width: 20px;
+    height: 4px;
+    margin: 0;
+    transform:rotate(45deg);
+    position: relative;
+}
+
+.xis-live::after
+{
+    content: "";
+    display: inline-block;
+    background-color: rgb(156, 151, 151);
+    width: 20px;
+    height: 4px;
+    transform:rotate(270deg);
+    top: 1%;
+    position: absolute;
+    border-radius: 2px;
+}
+
+#boli-act
+{
+    border-color: var(--icon);
+}
+
+#xis-act,#xis-act::after
+{
+    background-color: var(--icon);
+}
+
+.blink
+{
+    margin-top: 10px;
+    animation: 2s infinite alternate blink;
+}
+
+@keyframes blink 
+{
+    20%
+    {
+      color: rgba(0, 0, 0, 0.575);  
+
+    }
+    60%
+    {
+      color: #dd4822; 
+   
+    }
+    
+}
+
+.hidden
+{
+    display: none;
+    position: absolute;
+    top: 999999999;
+    left: 9999999;
+}
+
+/* LINHAS */
+
+.linha-ver,.linha-hor
+{
+    background-color: var(--line);
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+.linha-bottom
+{
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.noborder
+{
+    border-radius: 0px;
+}
+
+.linha-hor
+{
+    grid-column: 1/6;
+}
+
+/* OBJETOS */
+
+.clicksp
+{
+    cursor: pointer;
+    max-height: 100%;
+    height: 150px;
+}
+
+.clicksp:hover 
+{
+    background-color: var(--linehover);
+}
+
+.xis
+{
+    background-color: var(--icon);
+    border-radius: 2px;
+    display: block;
+    width: 15px;
+    margin: 0 auto;
+    transform:rotate(45deg);
+    position: relative;
+    cursor: default;
+
+}
+
+.xis:hover
+{
+    background-color: var(--icon);
+}
+
+.xis::after
+{
+    content: "";
+    display: inline-block;
+    background-color: var(--icon);
+    width: 15px;
+    height: 150px;
+    transform:rotate(270deg);
+    top: 1%;
+    position: absolute;
+    border-radius: 2px;
+}
+
+.boli
+{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin: 5px auto;
+    border:15px solid var(--icon);
+    cursor: default;
+}
+
+.boli:hover
+{
+    background-color: unset;
+}
+
+.noclick
+{
+    width: 100px;
+    height: 100px;
+    cursor: default;
+}
+
+/* RESPONSIVO */
+
+@media (max-width:580px)
+{
+    .grid
+    {
+        max-width: 400px;
+    }
+    .clicksp
+    {
+        height: 120px;
+        cursor: pointer;
+    }
+    .boli
+    {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin: 5px auto;
+    border:15px solid var(--icon);
+   
+    }
+
+    .xis,.xis::after
+    {
+        height: 130px;
+    }
+     
+}
+
+@media (max-width:400px)
+{
+    body 
+    {
+        padding: 0 5px;
+    }
+    .clicksp
+    {
+        height: 80px;
+        cursor: pointer;
+    }
+    .grid
+    {
+        max-width: 360px;
+        margin-bottom: 20px;
+    }
+    .init
+    {
+        margin-top: 20px;
+    }
+
+    .boli
+    {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin: 5px auto;
+    border:15px solid var(--icon);
+   
+    }
+
+    .xis,.xis::after
+    {
+        height: 100px;
+    }
+     
+}
