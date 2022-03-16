@@ -150,6 +150,7 @@ function finishGame(i,s)
             item.classList.add('hidden')
             hidden[0].innerHTML = "! EMPATE !"
             hidden[0].classList.remove('hidden')
+            window.setTimeout(resetGame,800)
         })
     }
 }
