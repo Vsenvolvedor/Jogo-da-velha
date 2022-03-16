@@ -9,4 +9,4 @@
 </h1>
 
 ## Veja o site dinamicamente
-[Jogo da velha](https://viteydev.github.io/Jogo-da-velha/)
+<a href="https://viteydev.github.io/Jogo-da-velha/" target="_blank">Jogo da velha</a>
