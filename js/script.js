@@ -149,8 +149,9 @@ function finishGame(i,s)
         hidden.forEach((item) => {
             item.classList.add('hidden')
             hidden[0].innerHTML = "! EMPATE !"
-            hidden[0].classList.remove('hidden')
-            window.setTimeout(resetGame,800)
+            hidden[0].classList.remove('hidden')    
         })
+        window.setTimeout(resetGame,800)
+        return
     }
 }
